@@ -1,0 +1,742 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #111;
+  width: 100%;
+  overflow: hidden;
+}
+.ring {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ring i {
+  position: absolute;
+  inset: 0;
+  border: 2px solid #fff;
+  transition: 0.5s;
+}
+.ring i:nth-child(1) {
+  border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+  animation: animate 6s linear infinite;
+}
+.ring i:nth-child(2) {
+  border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+  animation: animate 4s linear infinite;
+}
+.ring i:nth-child(3) {
+  border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+  animation: animate2 10s linear infinite;
+}
+.ring:hover i {
+  border: 6px solid var(--clr);
+  filter: drop-shadow(0 0 20px var(--clr));
+}
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes animate2 {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.login {
+  position: absolute;
+  width: 300px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.login h2 {
+  font-size: 2em;
+  color: #fff;
+}
+.login .inputBx {
+  position: relative;
+  width: 100%;
+}
+.login .inputBx input {
+  position: relative;
+  width: 100%;
+  padding: 12px 20px;
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 40px;
+  font-size: 1.2em;
+  color: #fff;
+  box-shadow: none;
+  outline: none;
+}
+.login .inputBx input[type="submit"] {
+  width: 100%;
+  background: #0078ff;
+  background: linear-gradient(45deg, #ff357a, #fff172);
+  border: none;
+  cursor: pointer;
+}
+.login .inputBx input::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+.login .links {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+.login .links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.register-body{
+  display: flex;
+  background: #0c1022;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.register-container{
+  position: relative;
+  width: 350px;
+  height: 500px;
+  background: rgba(0,0,0,0.75);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 32px;
+  overflow: hidden;
+}
+
+.register-container::before{
+  content: "";
+  position: absolute;
+  height: 650px;
+  width: 650px;
+  background: conic-gradient(transparent, transparent, transparent, #d400d4);
+  animation: animate 4s linear infinite;
+  animation-delay: -2s;
+}
+
+.register-container::after{
+  content: "";
+  position: absolute;
+  height: 650px;
+  width: 650px;
+  background: conic-gradient(transparent, transparent, transparent, #00cfff);
+  animation: animate 4s linear infinite;
+}
+
+@keyframes animate{
+  0%{
+      transform: rotate(0);
+  }
+  100%{
+      transform: rotate(360deg);
+  }
+}
+
+.register-image{
+  position: absolute;
+  inset: 5px;
+  background-color: #0c1022;
+  z-index: 1;
+  border-radius: 16px;
+}
+
+.register-form-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+}
+
+.register-form-box .register-form h2{
+  font-size: 32px;
+  color: #fff;
+  text-align: center;
+}
+
+.register-form .register-input-box{
+  position: relative;
+  margin: 30px 0;
+  width: 310px;
+  border-bottom: 2px solid #fff;
+}
+
+.register-input-box input{
+  width: 100%;
+  height: 50px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  padding: 0 35px 0 5px;
+  color: #fff;
+}
+
+.register-input:focus ~ .register-label,
+.register-input:valid ~ .register-label{
+  top: -5px;
+}
+
+.register-input-box .register-label{
+  position: absolute;
+  color: #fff;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  font-size: 16px;
+  pointer-events: none;
+  transition: .3s;
+}
+
+.loader{
+  height: 100%;
+  width: 100%;
+}
+.register-group{
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+.register-group a{
+  position: relative;
+  top: -15px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.register-button{
+  height: 40px;
+  width: 100px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+}
+
+.register-button:focus{
+  color: #fff;
+  background-color: #0c1022;
+  border: 2px solid #fff;
+}
+
+.register-image1{
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 2px solid #d400d4;
+  box-shadow:1px 1px 1px 1px #00cfff;
+  animation: animate 4s linear infinite;
+}
+
+.register-p{
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.Home{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  color: white;
+  justify-content: center;
+}
+
+.Home-container{
+  display: flex;
+  color: white;
+  width: 1200px;
+  height: 90%;
+}
+
+.Sidebar{
+  width: 300px;
+  background-color: rgb(8, 8, 6);
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 14px rgba(255, 255, 255, 0.396), 0 1px 3px rgba(255, 255, 255, 0.232); 
+}
+
+.Navbar{
+  height: 180px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  background-color: rgb(8, 8, 6);
+  border-radius:10px;
+}
+.Navbar-user{
+  margin-top: 15px;
+  margin-left: 12px;
+  display: flex;
+  margin-right: 0px;
+  justify-content: space-around;
+}
+.Navbar-image{
+  height: 100px;
+  width: 100px;
+  margin-left: 90px;
+  background-image: url("https://icon-library.com/images/user-png-icon/user-png-icon-16.jpg");
+  background-size: cover;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+  box-shadow: 0px 2px 24px purple, 0px 2px 24px rgb(0, 23, 44), 0 1px 60px rgb(17, 0, 130); 
+}
+.Navbar-info{
+  width: fit-content;
+  margin-left: -212px;
+  margin-top: 100px;
+  text-align: center;
+}
+.Navbar-span{
+  width: 200px;
+  font-size: x-large;
+  font-weight: 800;
+}
+.Navbar-button{
+  margin-top: 8px;
+  width: 300px;
+  height: 25px;
+  border-radius: 5px;
+  background: linear-gradient(145deg, #071f39, #1e1d1d);
+  color: white;
+  border-width: 0px;
+  font-size: medium;
+  padding-left: 5px;
+  font-weight: 600;
+}
+.Search{
+  background-image: url("https://th.bing.com/th/id/OIP.kW96j3-D2YRPkSzm7fqNeAHaEo?w=1080&h=675&rs=1&pid=ImgDetMain");
+  background-size: cover;
+  width: 300px;
+  resize: none;
+  display: inline-block;
+  background-color: rgb(8, 8, 6);
+  height: 100px;
+  border-radius: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+.Search-input{
+  margin-left: 20px;
+  margin-top: 5px;
+  width: 230px;
+  height: 34px;
+  border-width: 0px;
+  color:rgb(209, 125, 77);
+  font-size: large;
+  font-weight: 700;
+  background-color: transparent;
+}
+.Search-input::placeholder{
+  font-size: larger;
+  font-weight: 600;
+}
+.Search-found{
+  margin-top: 5px;
+  display: flex;
+  margin-left: 20px;
+}
+.Search-image{
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px dashed orange;
+  background-image: url("https://icon-library.com/images/user-png-icon/user-png-icon-16.jpg");
+  background-size: cover;
+}
+.Search-span{
+  margin-left: 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: x-large;
+  font-weight: 600;
+}
+.Chats-found{
+  align-items: center;
+  width: 300px;
+  height: 70px;
+  display: inline-block;
+  padding-left: 20px;
+  background-color:rgb(0, 0, 15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+.Chats-found:hover{
+  background-color: rgb(38, 40, 42) ;
+}
+.Chats-info{
+  width: fit-content;
+  margin-left: 30px;
+}
+.Chats-span{
+  font-size: large;
+  font-weight: 600;
+  margin-left: -15px;
+  cursor: pointer;
+  color: #d9abff;
+}
+.Chats-p{
+  width: fit-content;
+  font-size: small;
+  margin-top: 5px;
+  margin-left: -15px;
+}
+.Chats-i{
+  margin-left: 110px;
+}
+.Chat-info{
+  background: linear-gradient(145deg, #000c19, #000000);
+  height: 80px;
+  background-color:  rgb(38, 40, 42);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  width: 898px;
+  border-radius: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 14px rgba(255, 255, 255, 0.396), 0 1px 3px rgba(255, 255, 255, 0.232); 
+}
+.Chat-image{
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+  margin-left: 20px;
+  margin-top: 5px;
+  background-image: url("https://icon-library.com/images/user-png-icon/user-png-icon-16.jpg");
+  background-size: cover;
+  box-shadow: 0px 2px 24px rgb(0, 23, 44), 0 1px 60px rgb(17, 0, 130); 
+}
+.Chat-span{
+  margin-left: 25px;
+  margin-top: 30px;
+  font-size: x-large;
+  font-weight: 900;
+  color: #d9abff;
+}
+.Chat-p{
+  margin-left: -5px;
+  margin-top: 35px;
+}
+.Chat-i{
+  cursor: pointer;
+  margin-top: 30px;
+  margin-left: 470px;
+}
+i{
+  cursor: pointer;
+  margin-left: 15px;
+}
+.myCallContainer {
+  margin-left: -550px;
+  margin-top: -150px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.VideoCall-Close-btn{
+  position: absolute;
+  margin-left: 100px;
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  z-index: 1000;
+}
+.Messages{
+  color: black;
+  width:898px;
+  height:572px;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  background-image: url("https://theskinnyfoodco.com/cdn/shop/files/Ingredients_page_1_2400x.png?v=1644254211");
+  background-size: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 14px rgba(255, 255, 255, 0.396), 0 1px 3px rgba(255, 255, 255, 0.232); 
+
+}
+::-webkit-scrollbar {
+  border-radius: 10px;
+  width: 10px; 
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: #f1f1f1; 
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+.Input{
+  color: black;
+  width: 898px;
+  height: 70px;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: rgb(38, 40, 42);
+  display: flex;
+  border-radius: 10px;
+  box-shadow: 0 2px 14px rgba(255, 255, 255, 0.396), 0 1px 3px rgba(255, 255, 255, 0.232); 
+  background: linear-gradient(145deg, #010c18, #1a1a1a);
+}
+.Input-input{
+  margin-left: 20px;
+  width: 650px;
+  border-width: 0px;
+  height: 40px;
+  padding-left: 20px;
+  margin-top: 15px;
+  font-size: large;
+  font-weight: 600;
+  background-color: rgb(38, 40, 42);
+  color: rgb(209, 125, 77);
+  background: linear-gradient(145deg, #010c18, #1a1a1a);
+}
+.Input-files{
+  width: 200px;
+  margin-right: 0px;
+  margin-top: 20px;
+}
+.Input-i{
+  margin-left: 10px;
+}
+.Input-label{
+  cursor: pointer;
+}
+.Input-button{
+  cursor: pointer;
+  width: 80px;
+  height: 30px;
+  margin-left: 10px;
+  border-radius: 5px;
+  background: linear-gradient(145deg, #000d1c, #100f0f);
+  color: white;
+  border-width: 0px;
+  font-size: medium;
+  font-weight: 600;
+  padding-right: 20px;
+}
+.Emoji-Input-button{
+  cursor: pointer;
+  height: 35px;
+  width: 35px;
+  margin-top: 20px;
+  margin-left: 10px;
+  border-radius: 50%;
+}
+.Emoji-i{
+  margin-top: -2px;
+  margin-left: -15px;
+}
+.EmojiPicker {
+  cursor: pointer;
+  margin-top: -500px;
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.EmojiPicker button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 5px;
+  transition: background 0.3s ease;
+}
+
+.EmojiPicker button:hover {
+  background-color: #f0f0f0;
+}
+
+.EmojiPicker button:focus {
+  outline: none;
+}
+
+.EmojiPicker button:active {
+  transform: scale(0.95);
+}
+
+.EmojiPicker button.selected {
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 50%;
+}
+
+.EmojiPicker button.selected:hover {
+  background-color: #0056b3;
+}
+.Message-normal{
+  justify-content: end;
+  display: flex;
+  margin-top: 20px;
+  display: inline-block;
+}
+.Message.own {
+  align-items: end;
+  margin-left: auto;
+}
+
+.Message.other {
+  align-items: start;
+  margin-right: auto;
+}
+
+.Message-span.own {
+  resize: none;
+  color: white;
+  padding: 8px 10px;
+  margin-top: 5px;
+  border-radius: 0px 30px 30px 30px;
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: larger;
+  font-weight: 600;
+  width: 400px;
+  height: fit-content;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  background: linear-gradient(145deg, #00142f, #1d7bd6);
+  box-shadow: 2px 2px 8px #0a49a3, -2px -2px 8px #1b7be8;
+  transition: transform 0.3s ease;
+}
+
+.Message-span.other {
+  resize: none;
+  color: white;
+  padding: 8px 10px;
+  margin-top: 5px;
+  border-radius: 30px 0px 30px 30px;
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: larger;
+  font-weight: 600;
+  width: 400px;
+  height: fit-content;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  background: linear-gradient(145deg, #2e2b2b, #000000);
+  box-shadow: 4px 4px 4px #161313, -4px -4px 4px #2e2b2b;
+  transition: transform 0.3s ease;
+}
+
+.Message-span.own:hover,
+.Message-span.other:hover {
+  transform: scale(1.05);
+}
+
+.Message-user-img{
+  border-radius: 50%;
+  margin-top: 5px;
+  height: 40px;
+  width: 40px;
+  border: 2px solid rgb(36, 11, 11);
+  background-image: url("https://icon-library.com/images/user-png-icon/user-png-icon-16.jpg");
+  background-size: cover;
+  display: none;
+}
+.Message-Username{
+  color: rgb(255, 0, 0);
+  text-align: start;
+  margin-bottom: 10px;
+}
+.Message-p{
+  margin-top: -10px;
+  color: rgb(255, 234, 194);
+  font-weight: 700;
+  text-align:end;;
+}
+.Message-image{
+  margin-left: 430px;
+  height: 300px;
+  width: 250px;
+}
+
+@keyframes blink {
+  from, to {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+.Reactions {
+  display: flex;
+  flex-direction: row;
+  margin-top: -27px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+
+.ReactionButton {
+  background: none;
+  border: none;
+  font-size: 24px; 
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.ReactionButton:hover {
+  transform: scale(1.2);
+}
+
+.CurrentReactions {
+  display: flex;
+  flex-wrap: nowrap; 
+  overflow-x: auto; 
+}
+.Reactions-i{
+  margin-left: -20px;
+  margin-top: -15px;
+}
+.Reaction {
+  font-size: 24px;
+  white-space: nowrap; 
+}
